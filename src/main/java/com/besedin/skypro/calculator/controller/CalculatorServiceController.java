@@ -1,5 +1,6 @@
 package com.besedin.skypro.calculator.controller;
 
+import com.besedin.skypro.calculator.exceptions.DontDivideOnOException;
 import com.besedin.skypro.calculator.service.CalculatorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +18,7 @@ public class CalculatorServiceController {
         this.calculatorService = calculatorService;
     }
 
+    @GetMapping
     public String greeting() {
         return "Добро пожаловать в калькулятор";
     }
@@ -48,7 +50,7 @@ public class CalculatorServiceController {
         String bString = String.valueOf(b);
         try{
             calculatorService.divide(a,b);
-        } catch (IllegalArgumentException e ){
+        } catch (DontDivideOnOException e ){
             return e.getMessage();
         }
         return aString + " / " + bString + " = " + calculatorService.divide(a, b);

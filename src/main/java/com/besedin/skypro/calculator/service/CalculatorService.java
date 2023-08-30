@@ -1,6 +1,6 @@
 package com.besedin.skypro.calculator.service;
 
-import org.springframework.context.annotation.Scope;
+import com.besedin.skypro.calculator.exceptions.DontDivideOnOException;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -19,7 +19,7 @@ public class CalculatorService {
 
     public double divide(int a, int b) {
         if(b == 0){
-            throw new IllegalArgumentException("Делить на ноль нельзя");
+            throw new DontDivideOnOException("Делить на ноль нельзя");
         }
         return a / b;
     }
