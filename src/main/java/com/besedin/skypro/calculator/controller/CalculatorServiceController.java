@@ -24,28 +24,28 @@ public class CalculatorServiceController {
     }
 
     @GetMapping("/plus")
-    public String plus(@RequestParam int a, @RequestParam int b) {
+    public String plus(@RequestParam double a, @RequestParam double b) {
         String aString = String.valueOf(a);
         String bString = String.valueOf(b);
         return aString + " + " + bString + " = " + calculatorService.plus(a, b);
     }
 
     @GetMapping("/minus")
-    public String minus(@RequestParam int a, @RequestParam int b) {
+    public String minus(@RequestParam double a, @RequestParam double b) {
         String aString = String.valueOf(a);
         String bString = String.valueOf(b);
         return aString + " - " + bString + " = " + calculatorService.minus(a, b);
     }
 
     @GetMapping("/multiply")
-    public String multiply(@RequestParam int a, @RequestParam int b) {
+    public String multiply(@RequestParam double a, @RequestParam double b) {
         String aString = String.valueOf(a);
         String bString = String.valueOf(b);
         return aString + " * " + bString + " = " + calculatorService.multiply(a, b);
     }
 
     @GetMapping("/divide")
-    public String divide(@RequestParam int a, @RequestParam int b) {
+    public String divide(@RequestParam double a, @RequestParam double b) {
         String aString = String.valueOf(a);
         String bString = String.valueOf(b);
         try{
